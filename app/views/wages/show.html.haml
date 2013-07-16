@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @wage.name
+%p
+  %b Base amount:
+  = @wage.base_amount
+%p
+  %b Ot amount:
+  = @wage.ot_amount
+
+= link_to 'Edit', edit_wage_path(@wage)
+\|
+= link_to 'Back', wages_path

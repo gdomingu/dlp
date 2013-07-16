@@ -2,6 +2,9 @@ Dlp::Application.routes.draw do
 
 
 
+  resources :wages
+
+
   resources :jobs
 
 

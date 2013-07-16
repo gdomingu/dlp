@@ -1,0 +1,23 @@
+%h1 Listing wages
+
+%table
+  %tr
+    %th Name
+    %th Base amount
+    %th Ot amount
+    %th
+    %th
+    %th
+
+  - @wages.each do |wage|
+    %tr
+      %td= wage.name
+      %td= wage.base_amount
+      %td= wage.ot_amount
+      %td= link_to 'Show', wage
+      %td= link_to 'Edit', edit_wage_path(wage)
+      %td= link_to 'Destroy', wage, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Wage', new_wage_path

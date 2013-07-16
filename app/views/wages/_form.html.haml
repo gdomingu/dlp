@@ -1,0 +1,19 @@
+= form_for @wage do |f|
+  - if @wage.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@wage.errors.count, "error")} prohibited this wage from being saved:"
+      %ul
+        - @wage.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :base_amount
+    = f.number_field :base_amount
+  .field
+    = f.label :ot_amount
+    = f.number_field :ot_amount
+  .actions
+    = f.submit 'Save'
