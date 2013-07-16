@@ -7,11 +7,29 @@
           %li= msg
 
   .field
+    = label_tag :first_name
+    = text_field_tag "user[first_name]", params[:user]
+  .field
+    = label_tag :last_name
+    = text_field_tag "user[last_name]", params[:user]
+  .field
+    = label_tag :home_phone
+    = number_field_tag "user[home_phone]", params[:user]
+  .field
+    = label_tag :cell_phone
+    = number_field_tag "user[cell_phone]", params[:user]
+  .field
+    = label_tag :work_phone
+    = number_field_tag "user[work_phone]", params[:user]
+  .field
+    = label_tag :address
+    = text_field_tag "user[address]", params[:user]
+  .field
     = f.label :gender
     = f.text_field :gender
   .field
     = f.label :bio
-    = f.text_field :bio
+    = f.text_area :bio
   .field
     = f.label :esl_level
     = f.text_field :esl_level
