@@ -1,4 +1,7 @@
 Dlp::Application.routes.draw do
+  resources :referrals
+
+
   root :to => 'worker_profiles#index'
   resources :worker_profiles
 

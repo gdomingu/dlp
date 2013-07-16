@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @referral.name
+%p
+  %b First name:
+  = @referral.first_name
+%p
+  %b Last name:
+  = @referral.last_name
+
+= link_to 'Edit', edit_referral_path(@referral)
+\|
+= link_to 'Back', referrals_path
