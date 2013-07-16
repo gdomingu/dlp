@@ -1,0 +1,43 @@
+= form_for @review do |f|
+  - if @review.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@review.errors.count, "error")} prohibited this review from being saved:"
+      %ul
+        - @review.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :job_id
+    = f.number_field :job_id
+  .field
+    = f.label :prompt1
+    = f.text_field :prompt1
+  .field
+    = f.label :prompt2
+    = f.text_field :prompt2
+  .field
+    = f.label :prompt3
+    = f.text_field :prompt3
+  .field
+    = f.label :prompt4
+    = f.text_field :prompt4
+  .field
+    = f.label :prompt5
+    = f.text_field :prompt5
+  .field
+    = f.label :answer1
+    = f.text_field :answer1
+  .field
+    = f.label :answer2
+    = f.text_field :answer2
+  .field
+    = f.label :answer3
+    = f.text_field :answer3
+  .field
+    = f.label :answer4
+    = f.text_field :answer4
+  .field
+    = f.label :answer5
+    = f.text_field :answer5
+  .actions
+    = f.submit 'Save'

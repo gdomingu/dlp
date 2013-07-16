@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Job:
+  = @review.job_id
+%p
+  %b Prompt1:
+  = @review.prompt1
+%p
+  %b Prompt2:
+  = @review.prompt2
+%p
+  %b Prompt3:
+  = @review.prompt3
+%p
+  %b Prompt4:
+  = @review.prompt4
+%p
+  %b Prompt5:
+  = @review.prompt5
+%p
+  %b Answer1:
+  = @review.answer1
+%p
+  %b Answer2:
+  = @review.answer2
+%p
+  %b Answer3:
+  = @review.answer3
+%p
+  %b Answer4:
+  = @review.answer4
+%p
+  %b Answer5:
+  = @review.answer5
+
+= link_to 'Edit', edit_review_path(@review)
+\|
+= link_to 'Back', reviews_path

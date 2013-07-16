@@ -1,0 +1,39 @@
+%h1 Listing reviews
+
+%table
+  %tr
+    %th Job
+    %th Prompt1
+    %th Prompt2
+    %th Prompt3
+    %th Prompt4
+    %th Prompt5
+    %th Answer1
+    %th Answer2
+    %th Answer3
+    %th Answer4
+    %th Answer5
+    %th
+    %th
+    %th
+
+  - @reviews.each do |review|
+    %tr
+      %td= review.job_id
+      %td= review.prompt1
+      %td= review.prompt2
+      %td= review.prompt3
+      %td= review.prompt4
+      %td= review.prompt5
+      %td= review.answer1
+      %td= review.answer2
+      %td= review.answer3
+      %td= review.answer4
+      %td= review.answer5
+      %td= link_to 'Show', review
+      %td= link_to 'Edit', edit_review_path(review)
+      %td= link_to 'Destroy', review, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Review', new_review_path
