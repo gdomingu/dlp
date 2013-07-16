@@ -1,0 +1,19 @@
+= form_for @due do |f|
+  - if @due.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@due.errors.count, "error")} prohibited this due from being saved:"
+      %ul
+        - @due.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :last_paid
+    = f.datetime_select :last_paid
+  .field
+    = f.label :amount
+    = f.number_field :amount
+  .field
+    = f.label :worker_profile_id
+    = f.number_field :worker_profile_id
+  .actions
+    = f.submit 'Save'

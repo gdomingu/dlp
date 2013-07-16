@@ -1,0 +1,23 @@
+%h1 Listing dues
+
+%table
+  %tr
+    %th Last paid
+    %th Amount
+    %th Worker profile
+    %th
+    %th
+    %th
+
+  - @dues.each do |due|
+    %tr
+      %td= due.last_paid
+      %td= due.amount
+      %td= due.worker_profile_id
+      %td= link_to 'Show', due
+      %td= link_to 'Edit', edit_due_path(due)
+      %td= link_to 'Destroy', due, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Due', new_due_path

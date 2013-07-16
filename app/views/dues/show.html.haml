@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Last paid:
+  = @due.last_paid
+%p
+  %b Amount:
+  = @due.amount
+%p
+  %b Worker profile:
+  = @due.worker_profile_id
+
+= link_to 'Edit', edit_due_path(@due)
+\|
+= link_to 'Back', dues_path
