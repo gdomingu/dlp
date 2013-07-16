@@ -6,4 +6,11 @@ class AdminUser < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
+  def dispatches
+    Job.where(:dispatcher_id => self.id)
+  end
+
+  def receives
+    Job.where(:receiver_id => self.id)
+  end
 end

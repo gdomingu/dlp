@@ -7,6 +7,6 @@ class WorkerProfile < ActiveRecord::Base
   has_and_belongs_to_many :identifications
   has_and_belongs_to_many :training_requests
   has_and_belongs_to_many :issues
-
+  has_and_belongs_to_many :jobs
 
 end
