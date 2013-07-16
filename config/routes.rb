@@ -1,5 +1,5 @@
 Dlp::Application.routes.draw do
-
+  root :to => 'worker_profiles#index'
   resources :worker_profiles
 
 
@@ -9,7 +9,7 @@ Dlp::Application.routes.draw do
   devise_for :users
   ActiveAdmin.routes(self)
 
-  root :to => 'welcome#index'
+
 
 
 end

@@ -12,4 +12,8 @@ class WorkerProfilesController < InheritedResources::Base
       render :new
     end
   end
+
+  def show
+    @worker_profile = WorkerProfile.find_by_id(params[:id])
+  end
 end
