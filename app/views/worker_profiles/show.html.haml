@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Gender:
+  = @worker_profile.gender
+%p
+  %b Bio:
+  = @worker_profile.bio
+%p
+  %b Esl level:
+  = @worker_profile.esl_level
+%p
+  %b Wait list:
+  = @worker_profile.wait_list
+%p
+  %b Own vehicle:
+  = @worker_profile.own_vehicle
+%p
+  %b Health insurance:
+  = @worker_profile.health_insurance
+%p
+  %b Want referral:
+  = @worker_profile.want_referral
+%p
+  %b Flyered:
+  = @worker_profile.flyered
+
+= link_to 'Edit', edit_worker_profile_path(@worker_profile)
+\|
+= link_to 'Back', worker_profiles_path
