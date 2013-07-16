@@ -1,0 +1,22 @@
+Dlp::Application.routes.draw do
+<<<<<<< HEAD
+  root :to => 'worker_profiles#index'
+=======
+
+  resources :photos
+
+
+>>>>>>> photomodel
+  resources :worker_profiles
+
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+  devise_for :users
+  ActiveAdmin.routes(self)
+
+
+
+
+end
