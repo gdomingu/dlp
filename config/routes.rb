@@ -1,5 +1,8 @@
 Dlp::Application.routes.draw do
 
+  resources :photos
+
+
   resources :worker_profiles
 
 
