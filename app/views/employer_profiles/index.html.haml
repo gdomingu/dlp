@@ -1,0 +1,17 @@
+%h1 Listing employer_profiles
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @employer_profiles.each do |employer_profile|
+    %tr
+      %td= link_to 'Show', employer_profile
+      %td= link_to 'Edit', edit_employer_profile_path(employer_profile)
+      %td= link_to 'Destroy', employer_profile, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Employer profile', new_employer_profile_path
