@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716210703) do
+ActiveRecord::Schema.define(:version => 20130716224410) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(:version => 20130716210703) do
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "employer_profiles", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "identifications_worker_profiles", :id => false, :force => true do |t|
     t.integer "indentification_id"
     t.integer "worker_profile_id"
@@ -74,6 +79,34 @@ ActiveRecord::Schema.define(:version => 20130716210703) do
   create_table "issues_worker_profiles", :id => false, :force => true do |t|
     t.integer "issue_id"
     t.integer "worker_profile_id"
+  end
+
+  create_table "jobs", :force => true do |t|
+    t.string   "kind"
+    t.string   "description"
+    t.datetime "date_of_job"
+    t.string   "duration"
+    t.string   "address"
+    t.string   "cross_street"
+    t.integer  "phone_number"
+    t.string   "phone_kind"
+    t.string   "referred_by"
+    t.string   "payment"
+    t.boolean  "one_time"
+    t.boolean  "on_going"
+    t.string   "frequency"
+    t.integer  "num_of_workers"
+    t.string   "english_level"
+    t.boolean  "will_pick_up"
+    t.string   "job_status"
+    t.integer  "dispatcher_id"
+    t.integer  "receiver_id"
+    t.boolean  "estimate"
+    t.boolean  "estimate_accepted"
+    t.float    "estimate_amount"
+    t.integer  "employer_profile_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "photos", :force => true do |t|

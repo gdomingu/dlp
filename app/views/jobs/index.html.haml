@@ -1,0 +1,63 @@
+%h1 Listing jobs
+
+%table
+  %tr
+    %th Kind
+    %th Description
+    %th Date of job
+    %th Duration
+    %th Address
+    %th Cross street
+    %th Phone number
+    %th Phone kind
+    %th Referred by
+    %th Payment
+    %th One time
+    %th On going
+    %th Frequency
+    %th Num of workers
+    %th English level
+    %th Will pick up
+    %th Job status
+    %th Dispatcher
+    %th Receiver
+    %th Estimate
+    %th Estimate accepted
+    %th Estimate amount
+    %th Employer profile
+    %th
+    %th
+    %th
+
+  - @jobs.each do |job|
+    %tr
+      %td= job.kind
+      %td= job.description
+      %td= job.date_of_job
+      %td= job.duration
+      %td= job.address
+      %td= job.cross_street
+      %td= job.phone_number
+      %td= job.phone_kind
+      %td= job.referred_by
+      %td= job.payment
+      %td= job.one_time
+      %td= job.on_going
+      %td= job.frequency
+      %td= job.num_of_workers
+      %td= job.english_level
+      %td= job.will_pick_up
+      %td= job.job_status
+      %td= job.dispatcher_id
+      %td= job.receiver_id
+      %td= job.estimate
+      %td= job.estimate_accepted
+      %td= job.estimate_amount
+      %td= job.employer_profile_id
+      %td= link_to 'Show', job
+      %td= link_to 'Edit', edit_job_path(job)
+      %td= link_to 'Destroy', job, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Job', new_job_path
