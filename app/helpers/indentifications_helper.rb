@@ -1,0 +1,2 @@
+module IndentificationsHelper
+end
