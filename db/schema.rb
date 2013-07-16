@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716204748) do
+ActiveRecord::Schema.define(:version => 20130716210703) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -54,6 +54,28 @@ ActiveRecord::Schema.define(:version => 20130716204748) do
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "identifications_worker_profiles", :id => false, :force => true do |t|
+    t.integer "indentification_id"
+    t.integer "worker_profile_id"
+  end
+
+  create_table "indentifications", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "issues", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "issues_worker_profiles", :id => false, :force => true do |t|
+    t.integer "issue_id"
+    t.integer "worker_profile_id"
+  end
+
   create_table "photos", :force => true do |t|
     t.string   "url"
     t.string   "user_id"
@@ -67,6 +89,39 @@ ActiveRecord::Schema.define(:version => 20130716204748) do
     t.string   "last_name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "skills", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "skills_worker_profiles", :id => false, :force => true do |t|
+    t.integer "skill_id"
+    t.integer "worker_profile_id"
+  end
+
+  create_table "tools", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tools_worker_profiles", :id => false, :force => true do |t|
+    t.integer "tool_id"
+    t.integer "worker_profile_id"
+  end
+
+  create_table "training_requests", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "training_requests_worker_profiles", :id => false, :force => true do |t|
+    t.integer "training_request_id"
+    t.integer "worker_profile_id"
   end
 
   create_table "users", :force => true do |t|

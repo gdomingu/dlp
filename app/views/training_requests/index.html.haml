@@ -1,0 +1,19 @@
+%h1 Listing training_requests
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @training_requests.each do |training_request|
+    %tr
+      %td= training_request.name
+      %td= link_to 'Show', training_request
+      %td= link_to 'Edit', edit_training_request_path(training_request)
+      %td= link_to 'Destroy', training_request, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Training request', new_training_request_path

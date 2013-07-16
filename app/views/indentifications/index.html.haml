@@ -1,0 +1,19 @@
+%h1 Listing indentifications
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @indentifications.each do |indentification|
+    %tr
+      %td= indentification.name
+      %td= link_to 'Show', indentification
+      %td= link_to 'Edit', edit_indentification_path(indentification)
+      %td= link_to 'Destroy', indentification, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Indentification', new_indentification_path
