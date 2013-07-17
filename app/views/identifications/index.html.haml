@@ -1,0 +1,19 @@
+%h1 Listing identifications
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @identifications.each do |identification|
+    %tr
+      %td= identification.name
+      %td= link_to 'Show', identification
+      %td= link_to 'Edit', edit_identification_path(identification)
+      %td= link_to 'Destroy', identification, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Identification', new_identification_path

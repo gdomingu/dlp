@@ -2,13 +2,16 @@ Dlp::Application.routes.draw do
 
 
 
-  resources :items
+  # resources :identifications
 
 
-  resources :reviews
+  # resources :items
 
 
-  resources :wages
+  # resources :reviews
+
+
+  # resources :wages
 
 
   resources :jobs

@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @identification.name
+
+= link_to 'Edit', edit_identification_path(@identification)
+\|
+= link_to 'Back', identifications_path
