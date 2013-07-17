@@ -1,0 +1,79 @@
+= form_for [:admin, @job] do |f|
+  - if @job.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@job.errors.count, "error")} prohibited this job from being saved:"
+      %ul
+        - @job.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :kind
+    = f.text_field :kind
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :date_of_job
+    = f.datetime_select :date_of_job
+  .field
+    = f.label :duration
+    = f.text_field :duration
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :cross_street
+    = f.text_field :cross_street
+  .field
+    = f.label :phone_number
+    = f.number_field :phone_number
+  .field
+    = f.label :phone_kind
+    = f.text_field :phone_kind
+  .field
+    = f.label :referred_by
+    = f.text_field :referred_by
+  .field
+    = f.label :payment
+    = f.text_field :payment
+  .field
+    = f.label :one_time
+    = f.check_box :one_time
+  .field
+    = f.label :on_going
+    = f.check_box :on_going
+  .field
+    = f.label :frequency
+    = f.text_field :frequency
+  .field
+    = f.label :num_of_workers
+    = f.number_field :num_of_workers
+  .field
+    = f.label :english_level
+    = f.text_field :english_level
+  .field
+    = f.label :will_pick_up
+    = f.check_box :will_pick_up
+  .field
+    = f.label :job_status
+    = f.text_field :job_status
+  .field
+    = f.label :dispatcher_id
+    = f.number_field :dispatcher_id
+  .field
+    = f.label :receiver_id
+    = f.number_field :receiver_id
+  .field
+    = f.label :estimate
+    = f.check_box :estimate
+  .field
+    = f.label :estimate_accepted
+    = f.check_box :estimate_accepted
+  .field
+    = f.label :estimate_amount
+    = f.text_field :estimate_amount
+  .field
+    = f.label :employer_profile_id
+    = f.number_field :employer_profile_id
+  .actions
+    = f.submit 'Save'
