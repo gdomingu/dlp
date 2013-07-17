@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716224410) do
+ActiveRecord::Schema.define(:version => 20130716234950) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -81,6 +81,17 @@ ActiveRecord::Schema.define(:version => 20130716224410) do
     t.integer "worker_profile_id"
   end
 
+  create_table "items", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "items_jobs", :id => false, :force => true do |t|
+    t.integer "item_id"
+    t.integer "job_id"
+  end
+
   create_table "jobs", :force => true do |t|
     t.string   "kind"
     t.string   "description"
@@ -109,6 +120,11 @@ ActiveRecord::Schema.define(:version => 20130716224410) do
     t.datetime "updated_at",          :null => false
   end
 
+  create_table "jobs_wages", :id => false, :force => true do |t|
+    t.integer "job_id"
+    t.integer "wage_id"
+  end
+
   create_table "photos", :force => true do |t|
     t.string   "url"
     t.string   "user_id"
@@ -120,6 +136,22 @@ ActiveRecord::Schema.define(:version => 20130716224410) do
     t.string   "name"
     t.string   "first_name"
     t.string   "last_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.integer  "job_id"
+    t.string   "prompt1"
+    t.string   "prompt2"
+    t.string   "prompt3"
+    t.string   "prompt4"
+    t.string   "prompt5"
+    t.string   "answer1"
+    t.string   "answer2"
+    t.string   "answer3"
+    t.string   "answer4"
+    t.string   "answer5"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -182,6 +214,14 @@ ActiveRecord::Schema.define(:version => 20130716224410) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "wages", :force => true do |t|
+    t.string   "name"
+    t.integer  "base_amount"
+    t.integer  "ot_amount"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "worker_profiles", :force => true do |t|
     t.string   "gender"
