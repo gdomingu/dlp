@@ -18,13 +18,13 @@
     %div.row
       %div.large-4.columns
         = f.label :home_phone
-        = f.number_field :home_phone
+        = f.telephone_field :home_phone, :class => "phone"
       %div.large-4.columns
         = f.label :cell_phone
-        = f.number_field :cell_phone
+        = f.telephone_field :cell_phone, :class => "phone"
       %div.large-4.columns
         = f.label :work_phone
-        = f.number_field :work_phone
+        = f.telephone_field :work_phone, :class => "phone"
     %div.row
       %div.large-12.columns
         = f.label :address

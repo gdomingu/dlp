@@ -4,11 +4,10 @@ class WorkerProfilesController < InheritedResources::Base
   end
 
   def create
-   @user = User.new
-   @user.profile = WorkerProfile.create(params[:worker_profile])
-   if @user.save
-    redirect_to root_path
-   else
+     @worker = WorkerProfile.new(params[:worker_profile])
+    if @worker.save
+      redirect_to root_path
+    else
       render :new
     end
   end
