@@ -1,5 +1,37 @@
 ActiveAdmin.register Job do
+
   menu :priority => 4
+    # This is sets position in nav bar.
+
+  batch_action :flag do |selection|
+       Job.find(selection).each { |p| p.flag! }
+       redirect_to collection_path, :notice => "Jobs flagged!"
+     end
+    # This adds the tick boxes
+
+  member_action :worker_profiles do
+       @job = Job.find(params[:id])
+
+       # This will render app/views/admin/posts/comments.html.erb
+     end
+
+  index do
+    selectable_column
+    column :employer_profile, :as => "Employer", :sortable => :employer_profile
+    column :date_of_job
+    column :kind, :label => "Kind of Job"
+    column :description
+    column :address
+    column :cross_street
+    column :phone_number, :as => :phone
+    column :job_status
+    column :worker_profile do |profile|
+        if :worker_profiles
+          link_to "Workers Assigned", admin_job_workers_path(profile.id)
+        end
+      end
+    default_actions
+  end
   form do |f|
        f.inputs "Details" do
         f.input :num_of_workers, :as => :number
@@ -29,5 +61,15 @@ ActiveAdmin.register Job do
         end
       f.actions
    end
-
+   # show do |job|
+   #      attributes_table do
+   #        row :num_of_workers
+   #        row :worker_profiles do
+   #          job.worker_profiles.each do |worker|
+   #              row worker.name
+   #          end
+   #        end
+   #      end
+   #      active_admin_comments
+   #    end
 end

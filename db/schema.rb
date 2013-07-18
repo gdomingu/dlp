@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717050637) do
+ActiveRecord::Schema.define(:version => 20130717213957) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(:version => 20130717050637) do
   end
 
   create_table "identifications_worker_profiles", :id => false, :force => true do |t|
-    t.integer "indentification_id"
+    t.integer "identification_id"
     t.integer "worker_profile_id"
   end
 
@@ -135,6 +135,11 @@ ActiveRecord::Schema.define(:version => 20130717050637) do
   create_table "jobs_wages", :id => false, :force => true do |t|
     t.integer "job_id"
     t.integer "wage_id"
+  end
+
+  create_table "jobs_worker_profiles", :id => false, :force => true do |t|
+    t.integer "job_id"
+    t.integer "worker_profile_id"
   end
 
   create_table "photos", :force => true do |t|
@@ -240,6 +245,12 @@ ActiveRecord::Schema.define(:version => 20130717050637) do
     t.datetime "flyered"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "home_phone"
+    t.integer  "cell_phone"
+    t.integer  "work_phone"
+    t.string   "address"
   end
 
 end

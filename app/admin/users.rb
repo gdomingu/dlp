@@ -1,7 +1,7 @@
 ActiveAdmin.register User do
   menu :priority => 1
   batch_action :flag do |selection|
-       Post.find(selection).each { |p| p.flag! }
+       User.find(selection).each { |p| p.flag! }
        redirect_to collection_path, :notice => "Posts flagged!"
      end
   index do

@@ -1,6 +1,6 @@
 Dlp::Application.routes.draw do
 
-
+  match '/admin/jobs/:id/worker_profiles' => 'admin/jobs#worker_profiles', :as => :admin_job_workers
 
   # resources :identifications
 

@@ -1,0 +1,8 @@
+table_for assigns[:job].worker_profiles do
+
+    column :id
+    column :first_name
+    column :bio do |worker_profile|
+      simple_format worker_profile.bio
+    end
+  end
