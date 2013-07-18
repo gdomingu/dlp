@@ -35,6 +35,7 @@ gem 'jquery-rails'
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'better_errors'
+  gem 'zurb-foundation'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

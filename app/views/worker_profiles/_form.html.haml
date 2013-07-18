@@ -6,50 +6,58 @@
         - @worker_profile.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = label_tag :first_name
-    = text_field_tag "user[first_name]", params[:user]
-  .field
-    = label_tag :last_name
-    = text_field_tag "user[last_name]", params[:user]
-  .field
-    = label_tag :home_phone
-    = number_field_tag "user[home_phone]", params[:user]
-  .field
-    = label_tag :cell_phone
-    = number_field_tag "user[cell_phone]", params[:user]
-  .field
-    = label_tag :work_phone
-    = number_field_tag "user[work_phone]", params[:user]
-  .field
-    = label_tag :address
-    = text_field_tag "user[address]", params[:user]
-  .field
-    = label_tag :email
-    = text_field_tag "user[email]", params[:user]
-  .field
-    = f.label :gender
-    = f.text_field :gender
-  .field
-    = f.label :bio
-    = f.text_area :bio
-  .field
-    = f.label :esl_level
-    = f.text_field :esl_level
-  .field
-    = f.label :wait_list
-    = f.number_field :wait_list
-  .field
-    = f.label :own_vehicle
-    = f.check_box :own_vehicle
-  .field
-    = f.label :health_insurance
-    = f.check_box :health_insurance
-  .field
-    = f.label :want_referral
-    = f.check_box :want_referral
-  .field
-    = f.label :flyered
-    = f.datetime_select :flyered
-  .actions
-    = f.submit 'Save'
+  %fieldset
+    %legend New Member Form
+    %div.row
+      %div.large-6.columns
+        = f.label :first_name
+        = f.text_field :first_name
+      %div.large-6.columns
+        = f.label :last_name
+        = f.text_field :last_name
+    %div.row
+      %div.large-4.columns
+        = f.label :home_phone
+        = f.number_field :home_phone
+      %div.large-4.columns
+        = f.label :cell_phone
+        = f.number_field :cell_phone
+      %div.large-4.columns
+        = f.label :work_phone
+        = f.number_field :work_phone
+    %div.row
+      %div.large-12.columns
+        = f.label :address
+        = f.text_field :address
+    / .field
+    /   = f.label :gender
+    /   = f.text_field :gender
+    %div.row
+      %div.small-12.columns
+        = f.label :bio
+        = f.text_area :bio
+    %div.row
+      %div.large-6.columns
+        = f.label :esl_level
+        = f.text_field :esl_level
+      %div.large-6.columns
+        = f.label :wait_list
+        = f.number_field :wait_list
+    %div.row
+      %div.large-4.columns
+        = f.label :own_vehicle
+        = f.check_box :own_vehicle
+      %div.large-4.columns
+        = f.label :health_insurance
+        = f.check_box :health_insurance
+      %div.large-4.columns
+        = f.label :want_referral
+        = f.check_box :want_referral
+    / %div.row
+    /   %div.large-12.columns
+    /     = f.label :flyered
+    /     = f.datetime_select :flyered
+    %div.row
+      %div.large-12.columns
+        .actions
+          = f.submit 'Save'

@@ -4,7 +4,7 @@ class WorkerProfilesController < InheritedResources::Base
   end
 
   def create
-   @user = User.create(params[:user])
+   @user = User.new
    @user.profile = WorkerProfile.create(params[:worker_profile])
    if @user.save
     redirect_to root_path
