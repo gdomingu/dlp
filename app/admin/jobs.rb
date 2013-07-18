@@ -32,6 +32,7 @@ ActiveAdmin.register Job do
       end
     default_actions
   end
+
   form do |f|
        f.inputs "Details" do
         f.input :num_of_workers, :as => :number
@@ -61,14 +62,13 @@ ActiveAdmin.register Job do
         end
       f.actions
    end
+
    # show do |job|
    #      attributes_table do
    #        row :num_of_workers
-   #        row :worker_profiles do
-   #          job.worker_profiles.each do |worker|
-   #              row worker.name
+   #        row :worker_profiles.each do |worker|
+   #          worker.first_name
    #          end
-   #        end
    #      end
    #      active_admin_comments
    #    end
