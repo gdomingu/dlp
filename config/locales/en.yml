@@ -3,3 +3,16 @@
 
 en:
   hello: "Hello world"
+
+en:
+  flash:
+    EmployerProfile:
+      create:
+        notice: "Thank you for registering! Feel free to look around or post a new job."
+
+en:
+  flash:
+    WorkerProfile:
+      create:
+        notice: "Welcome to the Day Labor Program!"
+

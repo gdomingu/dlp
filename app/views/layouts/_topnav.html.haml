@@ -12,19 +12,20 @@
       %li.divider
       %li.active
         %a{:href => "/welcome/about"} About Us
-      - if current_user && current_user.profile_type.nil?
-        %li.divider
-        %li.active
-          = link_to("New Worker Profile", new_worker_profile_path)
-        %li.divider
-        %li.active
-          = link_to("New Employer Profile", new_employer_profile_path)
+      - if current_user
+        - if current_user.profile_type.nil?
+          %li.divider
+          %li.active
+            = link_to("New Worker Profile", new_worker_profile_path)
+          %li.divider
+          %li.active
+            = link_to("New Employer Profile", new_employer_profile_path)
         %li.divider
         %li
           = link_to("#{current_user.email}", edit_user_registration_path)
         %li.divider
-        %li.active
-          = link_to("Log out", destroy_user_session_path)
+        %li
+          = link_to("Log out", destroy_user_session_path, :method => :delete)
       - else
         %li.divider
         %li
