@@ -1,5 +1,8 @@
 Dlp::Application.routes.draw do
 
+  get "welcome/index"
+  get "welcome/about"
+
   match '/admin/jobs/:id/worker_profiles' => 'admin/jobs#worker_profiles', :as => :admin_job_workers
 
   # resources :identifications
@@ -26,7 +29,7 @@ Dlp::Application.routes.draw do
   # resources :referrals
 
 
-  root :to => 'worker_profiles#index'
+  root :to => 'welcome#index'
   resources :worker_profiles
 
 

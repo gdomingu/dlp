@@ -11,49 +11,20 @@
     %ul.left
       %li.divider
       %li.active
-        %a{:href => "/about"} About Us
-      - if current_user
+        %a{:href => "/welcome/about"} About Us
+      - if current_user && current_user.profile_type.nil?
         %li.divider
-        %li.has-dropdown
-          %a{:href => "#"} Favorites
-          %ul.dropdown
-            %li.has-dropdown
-              %a{:href => "#"} Dropdown Level 1a
-              %ul.dropdown
-                %li
-                  %label Dropdown Level 2 Label
-                %li
-                  %a{:href => "#"} Dropdown Level 2a
-                %li
-                  %a{:href => "#"} Dropdown Level 2b
-                %li
-                  %a{:href => "#"} Dropdown Level 2c
-                %li
-                  %a{:href => "#"} Dropdown Level 2d
-                %li
-                  %a{:href => "#"} Dropdown Level 2e
-                %li
-                  %a{:href => "#"} Dropdown Level 2f
-            %li
-              %a{:href => "#"} Dropdown Level 1b
-            %li
-              %a{:href => "#"} Dropdown Level 1c
-            %li.divider
-            %li
-              %a{:href => "#"} Dropdown Level 1d
-            %li
-              %a{:href => "#"} Dropdown Level 1e
-            %li
-              %a{:href => "#"} Dropdown Level 1f
-            %li.divider
-            %li
-              %a{:href => "#"} See all →
+        %li.active
+          = link_to("New Worker Profile", new_worker_profile_path)
+        %li.divider
+        %li.active
+          = link_to("New Employer Profile", new_employer_profile_path)
         %li.divider
         %li
-          = link_to("Log out", logout_path)
+          = link_to("#{current_user.email}", edit_user_registration_path)
         %li.divider
-        %li
-          = link_to("#{current_user.name}", users_path)
+        %li.active
+          = link_to("Log out", destroy_user_session_path)
       - else
         %li.divider
         %li
@@ -61,4 +32,3 @@
         %li.divider
         %li
           = link_to("Sign in", new_user_session_path)
-      %li.divider
