@@ -25,10 +25,10 @@ end
 gem 'jquery-rails'
 
 
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
-  gem 'capybara'
+  # gem 'rspec-rails'
+  # gem 'shoulda-matchers'
+  # gem 'factory_girl_rails'
+  # gem 'capybara'
   gem 'pry-rails'
   gem 'launchy'
   gem 'pry-debugger'

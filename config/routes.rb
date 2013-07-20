@@ -1,6 +1,16 @@
 Dlp::Application.routes.draw do
+  root :to => 'welcome#index'
+  resources :worker_profiles
 
-  resources :users
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+  devise_for :users
+  ActiveAdmin.routes(self)
+
+
+  resources :users, :only => [:show]
   match "welcome/about" => "welcome#about", :as => :about
   match "welcome/contact" => "welcome#contact", :as => :contact
 
@@ -30,15 +40,6 @@ Dlp::Application.routes.draw do
   # resources :referrals
 
 
-  root :to => 'welcome#index'
-  resources :worker_profiles
-
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
-  devise_for :users
-  ActiveAdmin.routes(self)
 
 
 
