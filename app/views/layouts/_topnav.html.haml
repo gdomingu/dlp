@@ -2,7 +2,7 @@
   %ul.title-area
     %li.name
       %h1
-        %a{:href => "/"} Home
+        =link_to("Home", root_path)
     %li.toggle-topbar.menu-icon
       %a{:href => "#"}
         %span Menu
@@ -10,26 +10,27 @@
     / Left Nav Section
     %ul.left
       %li.divider
-      %li.active
-        %a{:href => "/welcome/about"} About Us
+      %li.name
+        =link_to("About Us", about_path)
+    %ul.right
       - if current_user
         - if current_user.profile_type.nil?
           %li.divider
-          %li.active
+          %li.name
             = link_to("New Worker Profile", new_worker_profile_path)
           %li.divider
-          %li.active
+          %li.name
             = link_to("New Employer Profile", new_employer_profile_path)
         %li.divider
-        %li
+        %li.name
           = link_to("#{current_user.email}", edit_user_registration_path)
         %li.divider
-        %li
+        %li.name
           = link_to("Log out", destroy_user_session_path, :method => :delete)
       - else
         %li.divider
-        %li
+        %li.name
           = link_to("Sign up", new_user_registration_path)
         %li.divider
-        %li
+        %li.name
           = link_to("Sign in", new_user_session_path)
