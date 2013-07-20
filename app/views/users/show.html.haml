@@ -1,0 +1,101 @@
+%p#notice= notice
+
+%h1 Profile of #{current_user.email}
+
+- if current_user.has_profile
+  %h3= current_user.profile_type.titleize
+%p
+  %b First name:
+  = @profile.first_name
+%p
+  %b Last name:
+  = @profile.last_name
+%p
+  %b Home phone:
+  = @profile.home_phone
+%p
+  %b Work phone:
+  = @profile.work_phone
+%p
+  %b Cell phone:
+  = @profile.cell_phone
+%p
+  %b Address:
+  = @profile.address
+
+-if current_user.has_photos
+  - @photos.each do |photo|
+    %ul
+      %li
+        %img{:src => "#{photo.url}"}
+-if current_user.has_jobs
+  =link_to "View Job History", :remote => true
+-elsif current_user.is_employer
+  =link_to "Post New Job", new_job_path
+/ %p
+/   %b Date of user:
+/   = @user.
+/ %p
+/   %b Duration:
+/   = @user.duration
+/ %p
+/   %b Address:
+/   = @user.address
+/ %p
+/   %b Cross street:
+/   = @user.cross_street
+/ %p
+/   %b Phone number:
+/   = @user.phone_number
+/ %p
+/   %b Phone kind:
+/   = @user.phone_kind
+/ %p
+/   %b Referred by:
+/   = @user.referred_by
+/ %p
+/   %b Payment:
+/   = @user.payment
+/ %p
+/   %b One time:
+/   = @user.one_time
+/ %p
+/   %b On going:
+/   = @user.on_going
+/ %p
+/   %b Frequency:
+/   = @user.frequency
+/ %p
+/   %b Num of workers:
+/   = @user.num_of_workers
+/ %p
+/   %b English level:
+/   = @user.english_level
+/ %p
+/   %b Will pick up:
+/   = @user.will_pick_up
+/ %p
+/   %b user status:
+/   = @user.user_status
+/ %p
+/   %b Dispatcher:
+/   = @user.dispatcher_id
+/ %p
+/   %b Receiver:
+/   = @user.receiver_id
+/ %p
+/   %b Estimate:
+/   = @user.estimate
+/ %p
+/   %b Estimate accepted:
+/   = @user.estimate_accepted
+/ %p
+/   %b Estimate amount:
+/   = @user.estimate_amount
+/ %p
+/   %b Employer profile:
+/   = @user.employer_profile_id
+
+/ = link_to 'Edit', edit_user_path(@user)
+/ \|
+/ = link_to 'Back', users_path
