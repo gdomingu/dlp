@@ -28,7 +28,10 @@
     %ul
       %li
         %img{:src => "#{photo.url}"}
-
+-if current_user.has_jobs
+  =link_to "View Job History", :remote => true
+-elsif current_user.is_employer
+  =link_to "Post New Job", new_job_path
 / %p
 /   %b Date of user:
 /   = @user.

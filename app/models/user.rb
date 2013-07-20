@@ -13,4 +13,15 @@ class User < ActiveRecord::Base
     !self.photos.empty?
   end
 
+  def is_worker
+    self.profile_type == "WorkerProfile"
+  end
+
+  def is_employer
+    self.profile_type == "EmployerProfile"
+  end
+
+  def has_jobs
+    !self.profile.jobs.empty?
+  end
 end
