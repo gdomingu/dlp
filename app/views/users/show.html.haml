@@ -10,6 +10,19 @@
 %p
   %b Last name:
   = @profile.last_name
+%p
+  %b Home phone:
+  = @profile.home_phone
+%p
+  %b Work phone:
+  = @profile.work_phone
+%p
+  %b Cell phone:
+  = @profile.cell_phone
+%p
+  %b Address:
+  = @profile.address
+
 -if current_user.has_photos
   - @photos.each do |photo|
     %ul
