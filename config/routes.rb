@@ -21,7 +21,6 @@ Dlp::Application.routes.draw do
 
   # resources :items
 
-
   # resources :reviews
 
 
