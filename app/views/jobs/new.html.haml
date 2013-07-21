@@ -1,5 +1,7 @@
 %h1 Post a new job
-
-= render 'form'
+- if user_signed_in? && current_user.is_employer
+  = render 'prefilledform'
+- else
+  = render 'form'
 
 = link_to 'Back', jobs_path

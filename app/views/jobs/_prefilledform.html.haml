@@ -31,26 +31,26 @@
     %div.row
     %div.large-4.columns
       = f.label :employer_first_name
-      = f.text_field :employer_first_name
+      = f.text_field :employer_first_name, :value => current_user.profile.first_name
     %div.large-4.columns
       = f.label :employer_last_name
-      = f.text_field :employer_last_name
+      = f.text_field :employer_last_name, :value => current_user.profile.last_name
     %div.row
     %div.large-4.columns
       = f.label :duration
       = f.text_field :duration
     %div.large-4.columns
       = f.label :address
-      = f.text_field :address
+      = f.text_field :address, :value => current_user.profile.address
     %div.large-4.columns
       = f.label :cross_street
       = f.text_field :cross_street
     %div.large-4.columns
       = f.label :phone_number
-      = f.telephone_field :phone_number
+      = f.telephone_field :phone_number, :class => "phone", :value => current_user.profile.cell_phone
     %div.large-4.columns
       = f.label :phone_type
-      = f.text_field :phone_kind
+      = f.text_field :phone_kind, :value => "Cell Phone"
     %div.large-4.columns
       = f.label :referred_by
       = f.text_field :referred_by
