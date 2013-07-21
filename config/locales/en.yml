@@ -16,3 +16,10 @@ en:
       create:
         notice: "Welcome to the Day Labor Program!"
 
+en:
+  Job:
+    flash:
+      actions:
+        create:
+          notice: "Thank you for using the Day Labor Program, we have received your request and will contact you shortly."
+

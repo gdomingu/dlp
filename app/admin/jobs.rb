@@ -17,19 +17,23 @@ ActiveAdmin.register Job do
 
   index do
     selectable_column
-    column :employer_profile, :as => "Employer", :sortable => :employer_profile
-    column :date_of_job
-    column :kind, :label => "Kind of Job"
+    column :employer, :employer_profile, :sortable => :employer_profile
+    column :date, :date_of_job
+    column :kind_of_job, :kind
     column :description
     column :address
     column :cross_street
-    column :phone_number, :as => :phone
+    column :phone, :phone_number
     column :job_status
+    column :posted_at, :created_at
     column :worker_profile do |profile|
         if :worker_profiles
           link_to "Workers Assigned", admin_job_workers_path(profile.id)
         end
       end
+    column :dispatch_receipt, :job_id do |job|
+      link_to "Generate Dispatch", job_jobdispatch_path(job.id)
+    end
     default_actions
   end
 

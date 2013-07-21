@@ -1,75 +1,60 @@
 %p#notice= notice
 
-%p
-  %b Kind:
+%h1 New Job Dispatch
+%p.large-7.columns
+  %b Employer Name | Nombre del Empleador:
+  = @job.employer_first_name + " " + @job.employer_last_name
+%p.large-7.columns
+  %b Work | Trabajador(a):
+  - if @job.has_workers
+    %ul
+      - @job.workers.each do |worker|
+        = worker.first_name + " " + worker.last_name
+    = render 'assignworker'
+  -else
+    %p.large-7.columns You have not assigned any workers yet!
+    = render 'assignworker'
+%p.large-7.columns
+  %b Type of Job:
   = @job.kind
-%p
-  %b Description:
-  = @job.description
-%p
-  %b Date of job:
+%p.large-7.columns
+  %b Time and Date of Job:
   = @job.date_of_job
-%p
-  %b Duration:
+%p.large-7.columns
+  %b Estimated Duration of Job:
   = @job.duration
-%p
+%p.large-7.columns
+  %b Pay per hour:
+  = @job.payment
+%p.large-7.columns
   %b Address:
   = @job.address
-%p
+%p.large-7.columns
   %b Cross street:
   = @job.cross_street
-%p
+%p.large-7.columns
   %b Phone number:
   = @job.phone_number
-%p
+%p.large-7.columns
   %b Phone kind:
   = @job.phone_kind
-%p
-  %b Referred by:
-  = @job.referred_by
-%p
-  %b Payment:
-  = @job.payment
-%p
-  %b One time:
-  = @job.one_time
-%p
-  %b On going:
-  = @job.on_going
-%p
-  %b Frequency:
-  = @job.frequency
-%p
-  %b Num of workers:
-  = @job.num_of_workers
-%p
-  %b English level:
-  = @job.english_level
-%p
-  %b Will pick up:
-  = @job.will_pick_up
-%p
-  %b Job status:
-  = @job.job_status
-%p
-  %b Dispatcher:
-  = @job.dispatcher_id
-%p
-  %b Receiver:
-  = @job.receiver_id
-%p
-  %b Estimate:
-  = @job.estimate
-%p
-  %b Estimate accepted:
-  = @job.estimate_accepted
-%p
-  %b Estimate amount:
-  = @job.estimate_amount
-%p
-  %b Employer profile:
-  = @job.employer_profile_id
+%div.mapwrapper.large-10.columns
 
+%p.large-7.columns Information for employers about the SF Day Labor Program
+%p.large-7.columns
+  %b Worker Rights:
+%p.large-7.columns DLP job prices are pro-set and non-negotiable.  The pro-set price is on the other side of your paper.  Employers are required by law to pay all workers at least the minimum wage of $8.00/hr in California and $10.55/hr in San Francisco.  Employers may not require workers to endanger themselves in unsafe working conditions.  Employers are financially responsible for medical expenses resulting from an on-the-job injury.  Under California Law, employers must give workers a 30 minute lunch break after 5 hours of work and a paid 10 minute break after each 4 hours of work.
+%p.large-7.columns
+  %b Payment:
+%p.large-7.columns You are responsible for paying the workers.  We are a non-profit organization and do not take a cut of the workers’ pay.  You pay each worker directly, preferably by cash.  IOU’s are adamantly not accepted.
+%p.large-7.columns
+  %b Immigration status and documentation requirements of the INS:
+%p.large-7.columns Under our program policy, we do not ask about the immigration status of the workers who use the Program.  Under federal law, if you are hiring someone for casual domestic work in a private home or if the labor is of a sporadic, irregular, or intermittent basis, you are not required to fill out an 1-9, the INS form that requests information about a worker’s permission to work in the U.S.
+%p.large-7.columns
+  %b Disclaimer:
+%p.large-7.columns The Day Labor Program provides a place for you to meet day laborers.  We are not an employment agency.  We are not responsible for ensuring the qualifications of the day laborers, the quality of the work performed, nor for any other legal responsibility of the employers.
+%p.large-7.columns It is up to you and the individual(s) that you contact through the Day Labor Program to decide the terms and conditions of employment and to make sure that you are in compliance with all state and federal laws.
+.row
 = link_to 'Edit', edit_job_path(@job)
 \|
 = link_to 'Back', jobs_path

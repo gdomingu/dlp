@@ -7,4 +7,9 @@ class Job < ActiveRecord::Base
   has_and_belongs_to_many :worker_profiles
   has_and_belongs_to_many :wages
   has_one :review
+
+
+  def has_workers
+    !self.worker_profiles.empty?
+  end
 end
