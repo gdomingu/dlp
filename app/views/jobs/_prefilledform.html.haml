@@ -70,25 +70,27 @@
       = f.label :will_pick_up
       = f.check_box :will_pick_up
     %div.large-4.columns
-      = f.label :job_status
-      = f.text_field :job_status
-    %div.large-4.columns
-      = f.label :dispatcher_id
-      = f.number_field :dispatcher_id
-    %div.large-4.columns
-      = f.label :receiver_id
-      = f.number_field :receiver_id
-    %div.large-4.columns
-      = f.label :estimate
+      = f.label :is_this_an_estimate?
       = f.check_box :estimate
-    %div.large-4.columns
-      = f.label :estimate_accepted
-      = f.check_box :estimate_accepted
-    %div.large-4.columns
-      = f.label :estimate_amount
-      = f.text_field :estimate_amount
-    %div.large-4.columns
-      = f.label :employer_profile_id
-      = f.number_field :employer_profile_id
-    .actions
-      = f.submit 'Save'
+    - if admin_user_signed_in?
+      %div.large-4.columns
+        = f.label :job_status
+        = f.text_field :job_status
+      %div.large-4.columns
+        = f.label :dispatcher_id
+        = f.number_field :dispatcher_id
+      %div.large-4.columns
+        = f.label :receiver_id
+        = f.number_field :receiver_id
+      %div.large-4.columns
+        = f.label :estimate_accepted
+        = f.check_box :estimate_accepted
+      %div.large-4.columns
+        = f.label :estimate_amount
+        = f.text_field :estimate_amount
+      %div.large-4.columns
+        = f.label :employer_profile_id
+        = f.number_field :employer_profile_id
+    - else
+      .actions
+        = f.submit 'Save'

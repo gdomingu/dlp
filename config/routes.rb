@@ -9,7 +9,7 @@ Dlp::Application.routes.draw do
   devise_for :users
   ActiveAdmin.routes(self)
 
-
+  match '/jobs/:id/jobdispatch' => 'jobs#jobdispatch', :as => :job_jobdispatch
   resources :users, :only => [:show]
   match "welcome/about" => "welcome#about", :as => :about
   match "welcome/contact" => "welcome#contact", :as => :contact

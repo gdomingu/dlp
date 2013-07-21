@@ -1,0 +1,75 @@
+%p#notice= notice
+
+%p
+  %b Kind:
+  = @job.kind
+%p
+  %b Description:
+  = @job.description
+%p
+  %b Date of job:
+  = @job.date_of_job
+%p
+  %b Duration:
+  = @job.duration
+%p
+  %b Address:
+  = @job.address
+%p
+  %b Cross street:
+  = @job.cross_street
+%p
+  %b Phone number:
+  = @job.phone_number
+%p
+  %b Phone kind:
+  = @job.phone_kind
+%p
+  %b Referred by:
+  = @job.referred_by
+%p
+  %b Payment:
+  = @job.payment
+%p
+  %b One time:
+  = @job.one_time
+%p
+  %b On going:
+  = @job.on_going
+%p
+  %b Frequency:
+  = @job.frequency
+%p
+  %b Num of workers:
+  = @job.num_of_workers
+%p
+  %b English level:
+  = @job.english_level
+%p
+  %b Will pick up:
+  = @job.will_pick_up
+%p
+  %b Job status:
+  = @job.job_status
+%p
+  %b Dispatcher:
+  = @job.dispatcher_id
+%p
+  %b Receiver:
+  = @job.receiver_id
+%p
+  %b Estimate:
+  = @job.estimate
+%p
+  %b Estimate accepted:
+  = @job.estimate_accepted
+%p
+  %b Estimate amount:
+  = @job.estimate_amount
+%p
+  %b Employer profile:
+  = @job.employer_profile_id
+
+= link_to 'Edit', edit_job_path(@job)
+\|
+= link_to 'Back', jobs_path
