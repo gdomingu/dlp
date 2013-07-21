@@ -1,7 +1,16 @@
 %h1 San Francisco Day Labor Program
 
-%div.carosel
+%div.carosel.large-7.columns
   %img(src="https://s3-us-west-2.amazonaws.com/sfdlp/LABOR07-597x400.jpg" alt="day_labor_program")
+/ - if !current_user.blank? && current_user.is_employer
+/ not sure if I want new job postint to be only for users with
+/ employer profiles.
+%div.large-3.columns
+  %img#logomain(src="https://s3-us-west-2.amazonaws.com/sfdlp/dlplogo.png" alt="logo")
+  %div.row
+  %p Welcome to the Day Labor Program, feel free to browse around or click the button to post a new job.
+  %button
+    =link_to "Post a New Job", new_job_path
 
 %div.workerprofiles
 

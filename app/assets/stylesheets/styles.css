@@ -1,4 +1,19 @@
-body {
-  /*background-color:#ff9973;*/
+#ui-datepicker-div{
+  background-color: lightgrey;
+  opacity:.95;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
+#logo{
+  height: 45px;
+  width:auto;
+  border:1px solid;
+  background-color: white;
+}
+
+#logomain{
+  height:200px;
+  width:200px;
+}

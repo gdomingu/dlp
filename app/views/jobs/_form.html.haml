@@ -9,14 +9,26 @@
   %fieldset
     %legend New Job Request
     %div.large-4.columns
-      = f.label :kind
-      = f.text_field :kind
-    %div.large-4.columns
-      = f.label :description
-      = f.text_field :description
+      = f.label :number_of_workers_needed
+      = f.number_field :num_of_workers
     %div.large-4.columns
       = f.label :date_of_job
-      = f.text_field :date_of_job, :id => "datepicker"
+      = f.text_field :date_of_job, :id => "datetimepicker"
+    / %div.large-4.columns
+    /   = f.label :kind
+    /   = f.text_field :kind
+    %div.row
+    %div.large-6.columns
+      = f.label :description
+      = f.text_area :description
+    %div.row
+    %div.large-6.columns
+      = f.label :requirements
+      = f.text_field :requirement
+    %div.large-4.columns
+      = f.label :english_level
+      = f.text_field :english_level
+    %div.row
     %div.large-4.columns
       = f.label :duration
       = f.text_field :duration
@@ -47,12 +59,6 @@
     %div.large-4.columns
       = f.label :frequency
       = f.text_field :frequency
-    %div.large-4.columns
-      = f.label :num_of_workers
-      = f.number_field :num_of_workers
-    %div.large-4.columns
-      = f.label :english_level
-      = f.text_field :english_level
     %div.large-4.columns
       = f.label :will_pick_up
       = f.check_box :will_pick_up
