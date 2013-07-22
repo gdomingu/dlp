@@ -5,15 +5,11 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.3/leaflet.css" />
-  <!--[if lte IE 8]>
-      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.3/leaflet.ie.css" />
-  <![endif]-->
+
   <script type="text/javascript"
        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmcLVdfbKP4OQA-gxcn5F1oEQi1r3yHa0&sensor=false">
      </script>
 
- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&sensor=false"></script>
 </head>
   <body>
     <%= render 'layouts/topnav' %>
@@ -25,6 +21,5 @@
     </div>
     <%= render 'layouts/footer' %>
   </body>
-  <script src="http://cdn.leafletjs.com/leaflet-0.6.3/leaflet.js"></script>
 </html>
 
