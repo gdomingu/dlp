@@ -19,7 +19,6 @@ class JobsController < InheritedResources::Base
 end
 
 def update
-  binding.pry
    @job = Job.find_by_id(params[:id])
    @job.worker_profiles << WorkerProfile.where(:first_name => params[:worker_profile][:first_name], :last_name => params[:worker_profile][:last_name])
     if @job.save
