@@ -18,9 +18,14 @@
   width:200px;
 }
 
-.mapwrapper {
-  height: 500px;
-  width: 500px;
+#map {
+  height: 400px;
+  width: 400px;
   border: 2px solid;
 
+}
+
+#map img {
+  max-width: none;
+  height: auto;
 }

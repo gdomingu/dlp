@@ -1,5 +1,5 @@
 class JobsController < InheritedResources::Base
-  before_filter :authenticate_user!, :except => [:new, :create, :show]
+  before_filter :authenticate_user!, :except => [:new, :create, :show, :jobdispatch]
   before_filter :authenticate_admin_user!, :only => [:jobdispatch]
 
   def jobdispatch

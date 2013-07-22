@@ -8,7 +8,8 @@ ruby "1.9.3"
 gem 'pg'
 gem 'haml-rails'
 gem 'activeadmin'
-gem "jquery-ui-rails"
+gem 'jquery-ui-rails'
+gem 'geocoder'
 
 # Gems used only for assets and not required
 # in production environments by default.

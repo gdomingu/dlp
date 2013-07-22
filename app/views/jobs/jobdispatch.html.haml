@@ -38,7 +38,19 @@
 %p.large-7.columns
   %b Phone kind:
   = @job.phone_kind
-%div.mapwrapper.large-10.columns
+%div#map.large-10.columns
+%div.row
+%form#calculate-route{:action => "#", :method => "get", :name => "calculate-route"}
+  %label{:for => "from"} From:
+  %input#from{:name => "from", :value => "3358 Cesar Chavez Street, San Francisco CA", :required => "required", :size => "30", :type => "text"}/
+  %a#from-link{:href => "#"} Get my position
+  %br/
+  %label{:for => "to"} To:
+  %input#to{:name => "to", :value => @job.address, :required => "required", :size => "30", :type => "text"}/
+  %a#to-link{:href => "#"} Get my position
+  %br/
+  %input{:type => "submit"}/
+  %input{:type => "reset"}/
 
 %p.large-7.columns Information for employers about the SF Day Labor Program
 %p.large-7.columns
