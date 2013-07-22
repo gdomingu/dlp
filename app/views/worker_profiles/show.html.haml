@@ -1,13 +1,10 @@
 %p#notice= notice
 %p
   %b First Name:
-  = @worker_profile.user.first_name
+  = @worker_profile.first_name
 %p
   %b Last Name:
-  = @worker_profile.user.last_name
-%p
-  %b Email:
-  = @worker_profile.user.email
+  = @worker_profile.last_name
 %p
   %b Gender:
   = @worker_profile.gender

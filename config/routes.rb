@@ -13,6 +13,8 @@ Dlp::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   match '/jobs/:id/jobdispatch' => 'jobs#jobdispatch', :as => :job_jobdispatch
+  match '/jobs/:id/addworker/:id' => 'jobs#addworker', :as => :job_addworker
+
   resources :users, :only => [:show]
   match "welcome/about" => "welcome#about", :as => :about
   match "welcome/contact" => "welcome#contact", :as => :contact

@@ -5,11 +5,12 @@
   %b Employer Name | Nombre del Empleador:
   = @job.employer_first_name + " " + @job.employer_last_name
 %p.large-7.columns
-  %b Work | Trabajador(a):
+  %b Worker | Trabajador(a):
   - if @job.has_workers
-    %ul
-      - @job.workers.each do |worker|
-        = worker.first_name + " " + worker.last_name
+    %ul.large-6.columns
+      - @job.worker_profiles.each do |worker|
+        %li
+          = link_to worker.first_name + " " + worker.last_name, worker_profile_path(worker.id)
     = render 'assignworker'
   -else
     %p.large-7.columns You have not assigned any workers yet!

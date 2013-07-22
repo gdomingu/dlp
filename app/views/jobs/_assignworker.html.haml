@@ -1,19 +1,19 @@
-= form_for @job, remote: true do |f|
-  - if @job.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@job.errors.count, "error")} prohibited this job from being saved:"
-      %ul
-        - @job.errors.full_messages.each do |msg|
-          %li= msg
+%fieldset.large-4.columns
+  %legend Assign Workers
+  = form_for @job do |f|
+    - if @job.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@job.errors.count, "error")} prohibited this job from being saved:"
+        %ul
+          - @job.errors.full_messages.each do |msg|
+            %li= msg
 
-  %fieldset
-    %legend Assign Workers
-    %div.large-4.columns
+    %div.large-6.columns
       = label_tag :enter_worker_first_name
-      = text_field_tag :first_name, nil, class: "search"
-    %div.large-4.columns
+      = text_field_tag "worker_profile[first_name]", params[:worker_profile]
+    %div.large-6.columns
       = label_tag :enter_worker_last_name
-      = text_field_tag :last_name, nil, class: "search"
+      = text_field_tag "worker_profile[last_name]", params[:worker_profile]
     %div.row
     .actions
       = f.submit 'Save', :class => :button
