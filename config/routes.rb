@@ -16,6 +16,8 @@ Dlp::Application.routes.draw do
   resources :users, :only => [:show]
   match "welcome/about" => "welcome#about", :as => :about
   match "welcome/contact" => "welcome#contact", :as => :contact
+  match "welcome/faq" => "welcome#faq", :as => :faq
+  match "welcome/howtohire" => "welcome#howtohire", :as => :howtohire
 
   match '/admin/jobs/:id/worker_profiles' => 'admin/jobs#worker_profiles', :as => :admin_job_workers
 

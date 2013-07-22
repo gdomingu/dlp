@@ -16,6 +16,12 @@
       %li.name
         =link_to("About Us", about_path)
       %li.divider
+      %li.name
+        =link_to("FAQs", faq_path)
+      %li.divider
+      %li.name
+        =link_to("How to Hire", howtohire_path)
+      %li.divider
     %ul.right
       - if current_user
         - if current_user.profile_type.nil?

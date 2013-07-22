@@ -10,6 +10,7 @@ gem 'haml-rails'
 gem 'activeadmin'
 gem 'jquery-ui-rails'
 gem 'geocoder'
+gem 'roo'
 
 # Gems used only for assets and not required
 # in production environments by default.
