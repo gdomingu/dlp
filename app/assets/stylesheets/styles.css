@@ -33,3 +33,8 @@
 li{
   list-style: none;
 }
+
+.profilepic {
+height:400px;
+width:400px;
+}
