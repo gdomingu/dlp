@@ -13,4 +13,6 @@ $( document ).ready(function() {
         frequencyparent.hide();
         job_on_going.prop("checked", false);
        });
+
+      $('.search').autocomplete
 });

@@ -1,4 +1,7 @@
 Dlp::Application.routes.draw do
+  resources :search_suggestions
+
+
   root :to => 'welcome#index'
   resources :worker_profiles
 

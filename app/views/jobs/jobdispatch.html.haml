@@ -38,9 +38,9 @@
 %p.large-7.columns
   %b Phone kind:
   = @job.phone_kind
-%div#map.large-10.columns
 %div.row
-%form#calculate-route{:action => "#", :method => "get", :name => "calculate-route"}
+%div#map.large-8.columns
+%form#calculate-route.large-4.columns{:action => "#", :method => "get", :name => "calculate-route"}
   %label{:for => "from"} From:
   %input#from{:name => "from", :value => "3358 Cesar Chavez Street, San Francisco CA", :required => "required", :size => "30", :type => "text"}/
   %a#from-link{:href => "#"} Get my position
@@ -51,8 +51,8 @@
   %br/
   %input{:type => "submit"}/
   %input{:type => "reset"}/
-
-%p.large-7.columns Information for employers about the SF Day Labor Program
+%div.row
+%h5.large-7.columns Information for employers about the SF Day Labor Program
 %p.large-7.columns
   %b Worker Rights:
 %p.large-7.columns DLP job prices are pro-set and non-negotiable.  The pro-set price is on the other side of your paper.  Employers are required by law to pay all workers at least the minimum wage of $8.00/hr in California and $10.55/hr in San Francisco.  Employers may not require workers to endanger themselves in unsafe working conditions.  Employers are financially responsible for medical expenses resulting from an on-the-job injury.  Under California Law, employers must give workers a 30 minute lunch break after 5 hours of work and a paid 10 minute break after each 4 hours of work.
