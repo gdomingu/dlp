@@ -22,6 +22,6 @@ class User < ActiveRecord::Base
   end
 
   def has_jobs
-    !self.profile.jobs.nil?
+    !self.profile.jobs.empty?
   end
 end
