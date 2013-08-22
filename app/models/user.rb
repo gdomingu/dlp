@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :timeoutable
+         :recoverable, :rememberable, :trackable, :timeoutable, :validatable
     attr_accessible :email, :password, :password_confirmation, :remember_me, :profile_id, :profile_type
   belongs_to :profile, polymorphic: true
   has_many :photos
 
   def has_profile
-    !self.profile_type.empty?
+    !self.profile_type.nil?
   end
 
   def has_photos
@@ -22,6 +22,6 @@ class User < ActiveRecord::Base
   end
 
   def has_jobs
-    !self.profile.jobs.empty?
+    !self.profile.jobs.nil?
   end
 end

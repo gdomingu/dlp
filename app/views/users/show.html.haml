@@ -4,31 +4,37 @@
 
 - if current_user.has_profile
   %h3= current_user.profile_type.titleize
-%p
-  %b First name:
-  = @profile.first_name
-%p
-  %b Last name:
-  = @profile.last_name
-%p
-  %b Home phone:
-  = @profile.home_phone
-%p
-  %b Work phone:
-  = @profile.work_phone
-%p
-  %b Cell phone:
-  = @profile.cell_phone
-%p
-  %b Address:
-  = @profile.address
+  %p
+    %b First name:
+    = @profile.first_name
+  %p
+    %b Last name:
+    = @profile.last_name
+  %p
+    %b Home phone:
+    = @profile.home_phone
+  %p
+    %b Work phone:
+    = @profile.work_phone
+  %p
+    %b Cell phone:
+    = @profile.cell_phone
+  %p
+    %b Address:
+    = @profile.address
+- else
+  %p You haven't filled out a profile yet!
+  = link_to "Create employer profile", new_employer_profile_path
+  .row
+  = link_to "Create worker profile", new_worker_profile_path
+
 
 -if current_user.has_photos
   - @photos.each do |photo|
     %ul
       %li
         %img{:src => "#{photo.url}"}
--if current_user.has_jobs
+-if current_user.has_profile && curent_user.has_jobs
   =link_to "View Job History", :remote => true
 -elsif current_user.is_employer
   =link_to "Post New Job", new_job_path
