@@ -24,7 +24,7 @@
       = f.text_field :requirement
     %div.large-4.columns
       = f.label :english_level_required
-      = f.select :english_level, options_for_select(["Select One","Some English","Fluent English","Not necessary"])
+      = f.select :english_level, options_for_select(["Some English","Fluent English","Not necessary"]), :prompt => "Select One"
     %div.row
     %div.large-4.columns
       = f.label :employer_first_name
@@ -34,7 +34,7 @@
       = f.text_field :employer_last_name
     %div.row
     %div.large-4.columns
-      = f.label :duration
+      = f.label :estimated_duration
       = f.text_field :duration
     %div.large-4.columns
       = f.label :address
@@ -47,7 +47,7 @@
       = f.text_field :referred_by
     %div.large-4.columns
       = f.label :payment
-      = f.text_field :payment
+      = f.select :payment, options_for_select(["Cash", "Personal Check", "On the Books (w-4)", "On the Books (1099)", "Other"]), :prompt => "Select One"
     %div.row
     %div.large-4.columns
       = f.label :one_time
