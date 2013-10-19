@@ -5,6 +5,10 @@ Dlp::Application.routes.draw do
   root :to => 'welcome#index'
   resources :worker_profiles
 
+  get "/new_moving_job" => "jobs#new_moving_job", as: :new_moving_job
+  get "/new_painting_job" => "jobs#new_painting_job", as: :new_painting_job
+  get "/new_gardening_job" => "jobs#new_gardening_job", as: :new_gardening_job
+  get "/new_other_job" => "jobs#new_other_job", as: :new_other_job
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

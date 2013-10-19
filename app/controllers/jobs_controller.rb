@@ -1,5 +1,5 @@
 class JobsController < InheritedResources::Base
-  before_filter :authenticate_user!, :except => [:new, :create, :show, :jobdispatch]
+  before_filter :authenticate_user!, :except => [:new, :new_moving_job, :new_painting_job, :new_gardening_job, :new_other_job, :create, :show, :jobdispatch]
   before_filter :authenticate_admin_user!, :only => [:jobdispatch]
 
   def jobdispatch
@@ -15,8 +15,8 @@ class JobsController < InheritedResources::Base
   respond_to do |format|
     format.html
     format.js
+    end
   end
-end
 
 def update
    @job = Job.find_by_id(params[:id])
@@ -27,8 +27,19 @@ def update
        render :new
     end
 end
-
-  def create
-    create!(:notice => "Thank you for using the Day Labor Program, we have received your request and will contact you shortly.")
-  end
+def new_moving_job
+  @job = Job.new(params[:job])
+end
+def new_painting_job
+  @job = Job.new(params[:job])
+end
+def new_gardening_job
+  @job = Job.new(params[:job])
+end
+def new_other_job
+  @job = Job.new(params[:job])
+end
+def create
+  create!(:notice => "Thank you for using the Day Labor Program, we have received your request and will contact you shortly.")
+end
 end

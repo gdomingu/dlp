@@ -2,6 +2,24 @@
 - if user_signed_in? && current_user.is_employer
   = render 'prefilledform'
 - else
-  = render 'form'
+  #modal_window.reveal-modal
+  %h3 Please select type of job
+  .jobselect.large-5.columns
+    %h4 Moving
+    %button#moving_select{:data => {"reveal-id" => "modal_window"}}
+      Select
+  .jobselect.large-5.columns
+    %h4 Gardening
+    %button#gardening_select{:data => {"reveal-id" => "modal_window"}}
+      Select
+  .jobselect.large-5.columns
+    %h4 Painting
+    %button#painting_select{:data => {"reveal-id" => "modal_window"}}
+      Select
+  .jobselect.large-5.columns
+    %h4 Other
+    %button#job_select{:data => {"reveal-id" => "modal_window"}}
+      Select
+  .row
+= link_to 'Start Over', new_job_path
 
-= link_to 'Back', jobs_path

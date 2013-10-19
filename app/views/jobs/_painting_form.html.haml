@@ -1,0 +1,91 @@
+= form_for @job do |f|
+  - if @job.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@job.errors.count, "error")} prohibited this job from being saved:"
+      %ul
+        - @job.errors.full_messages.each do |msg|
+          %li= msg
+
+  %fieldset
+    %legend New Painting Job Request
+    %div.large-4.columns
+      = f.label :number_of_workers_needed
+      = f.number_field :num_of_workers
+    %div.large-4.columns
+      = f.label :date_of_job
+      = f.text_field :date_of_job, :id => "datetimepicker"
+    %div.row
+    %div.large-6.columns
+      = f.label :description
+      = f.text_area :description
+    %div.row
+    %div.large-6.columns
+      = f.label :requirements
+      = f.text_field :requirement
+    %div.large-4.columns
+      = f.label :english_level_required
+      = f.select :english_level, options_for_select(["Some English","Fluent English","Not necessary"]), :prompt => "Select One"
+    %div.row
+    %div.large-4.columns
+      = f.label :employer_first_name
+      = f.text_field :employer_first_name
+    %div.large-4.columns
+      = f.label :employer_last_name
+      = f.text_field :employer_last_name
+    %div.row
+    %div.large-4.columns
+      = f.label :estimated_duration
+      = f.text_field :duration
+    %div.large-4.columns
+      = f.label :address
+      = f.text_field :address
+    %div.large-4.columns
+      = f.label :phone_number
+      = f.telephone_field :phone_number, :class => "phone"
+    %div.large-4.columns
+      = f.label :how_did_you_hear_about_us?
+      = f.text_field :referred_by
+    %div.large-4.columns
+      = f.label :payment
+      = f.select :payment, options_for_select(["Cash", "Personal Check", "On the Books (w-4)", "On the Books (1099)", "Other"]), :prompt => "Select One"
+    %div.row
+    %div.large-4.columns
+      = f.label :one_time
+      = f.check_box :one_time
+    %div.large-4.columns
+      = f.label :on_going
+      = f.check_box :on_going
+    %div.large-4.columns
+      = f.label :frequency
+      = f.text_field :frequency
+    %div.row
+    %div.large-4.columns
+      = f.label :will_pick_up
+      = f.check_box :will_pick_up
+    %div.large-4.columns
+      = f.label :is_this_an_estimate?
+      = f.check_box :estimate
+    - if admin_user_signed_in?
+      %div.large-4.columns
+        = f.label :job_status
+        = f.text_field :job_status
+      %div.large-4.columns
+        = f.label :dispatcher_id
+        = f.number_field :dispatcher_id
+      %div.large-4.columns
+        = f.label :receiver_id
+        = f.number_field :receiver_id
+      %div.large-4.columns
+        = f.label :estimate_accepted
+        = f.check_box :estimate_accepted
+      %div.large-4.columns
+        = f.label :estimate_amount
+        = f.text_field :estimate_amount
+      %div.large-4.columns
+        = f.label :employer_profile_id
+        = f.number_field :employer_profile_id
+      .actions
+        = f.submit 'Save', :class => :button
+    - else
+      .actions
+        = f.submit 'Save', :class => :button
