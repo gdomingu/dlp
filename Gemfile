@@ -8,7 +8,7 @@ ruby "1.9.3"
 gem 'pg'
 gem 'haml-rails'
 gem 'activeadmin'
-# gem 'jquery-ui-rails'
+gem 'jquery-ui-rails'
 gem 'geocoder'
 # gem 'roo'
 

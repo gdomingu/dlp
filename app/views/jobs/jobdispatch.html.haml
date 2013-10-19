@@ -15,30 +15,30 @@
   -else
     %p.large-7.columns You have not assigned any workers yet!
     = render 'assignworker'
-%p.large-7.columns
-  %b Type of Job:
-  = @job.kind
-%p.large-7.columns
-  %b Time and Date of Job:
-  = @job.date_of_job
-%p.large-7.columns
-  %b Estimated Duration of Job:
-  = @job.duration
-%p.large-7.columns
-  %b Pay per hour:
-  = @job.payment
-%p.large-7.columns
-  %b Address:
-  = @job.address
-%p.large-7.columns
-  %b Cross street:
-  = @job.cross_street
-%p.large-7.columns
-  %b Phone number:
-  = @job.phone_number
-%p.large-7.columns
-  %b Phone kind:
-  = @job.phone_kind
+  %p.large-7.columns
+    %b Type of Job:
+    = @job.kind
+  %p.large-7.columns
+    %b Time and Date of Job:
+    = @job.date_of_job
+  %p.large-7.columns
+    %b Estimated Duration of Job:
+    = @job.duration
+  %p.large-7.columns
+    %b Pay per hour:
+    = @job.payment
+  %p.large-7.columns
+    %b Address:
+    = @job.address
+  %p.large-7.columns
+    %b Cross street:
+    = @job.cross_street
+  %p.large-7.columns
+    %b Phone number:
+    = @job.phone_number
+  %p.large-7.columns
+    %b Phone kind:
+    = @job.phone_kind
 %div.row
 %div#map.large-8.columns
 %form#calculate-route.large-4.columns{:action => "#", :method => "get", :name => "calculate-route"}

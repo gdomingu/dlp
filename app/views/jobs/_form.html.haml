@@ -27,7 +27,7 @@
       = f.text_field :requirement
     %div.large-4.columns
       = f.label :english_level_required
-      = f.text_field :english_level
+      = f.select :english_level, options_for_select(["Select One","Some English","Fluent English","Not necessary"])
     %div.row
     %div.large-4.columns
       = f.label :employer_first_name
@@ -43,16 +43,10 @@
       = f.label :address
       = f.text_field :address
     %div.large-4.columns
-      = f.label :cross_street
-      = f.text_field :cross_street
-    %div.large-4.columns
       = f.label :phone_number
       = f.telephone_field :phone_number, :class => "phone"
     %div.large-4.columns
-      = f.label :phone_type
-      = f.text_field :phone_kind
-    %div.large-4.columns
-      = f.label :referred_by
+      = f.label :how_did_you_hear_about_us?
       = f.text_field :referred_by
     %div.large-4.columns
       = f.label :payment

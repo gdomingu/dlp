@@ -29,6 +29,6 @@ def update
 end
 
   def create
-     create!(:notice => "Thank you for using the Day Labor Program, we have received your request and will contact you shortly.")
-   end
+    create!(:notice => "Thank you for using the Day Labor Program, we have received your request and will contact you shortly.")
+  end
 end
