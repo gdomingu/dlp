@@ -43,3 +43,7 @@ width:400px;
   border:1px solid;
   margin-left:1px;
 }
+
+.job_section_form{
+  display: none;
+}

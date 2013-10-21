@@ -8,84 +8,84 @@
 
   %fieldset
     %legend New Gardening Job Request
-    %div.large-4.columns
-      = f.label :number_of_workers_needed
-      = f.number_field :num_of_workers
-    %div.large-4.columns
-      = f.label :date_of_job
-      = f.text_field :date_of_job, :id => "datetimepicker"
-    %div.row
-    %div.large-6.columns
-      = f.label :description
-      = f.text_area :description
-    %div.row
-    %div.large-6.columns
-      = f.label :requirements
-      = f.text_field :requirement
-    %div.large-4.columns
-      = f.label :english_level_required
-      = f.select :english_level, options_for_select(["Some English","Fluent English","Not necessary"]), :prompt => "Select One"
-    %div.row
-    %div.large-4.columns
-      = f.label :employer_first_name
-      = f.text_field :employer_first_name
-    %div.large-4.columns
-      = f.label :employer_last_name
-      = f.text_field :employer_last_name
-    %div.row
-    %div.large-4.columns
-      = f.label :estimated_duration
-      = f.text_field :duration
-    %div.large-4.columns
-      = f.label :address
-      = f.text_field :address
-    %div.large-4.columns
-      = f.label :phone_number
-      = f.telephone_field :phone_number, :class => "phone"
-    %div.large-4.columns
-      = f.label :how_did_you_hear_about_us?
-      = f.text_field :referred_by
-    %div.large-4.columns
-      = f.label :payment
-      = f.select :payment, options_for_select(["Cash", "Personal Check", "On the Books (w-4)", "On the Books (1099)", "Other"]), :prompt => "Select One"
-    %div.row
-    %div.large-4.columns
-      = f.label :one_time
-      = f.check_box :one_time
-    %div.large-4.columns
-      = f.label :on_going
-      = f.check_box :on_going
-    %div.large-4.columns
-      = f.label :frequency
-      = f.text_field :frequency
-    %div.row
-    %div.large-4.columns
-      = f.label :will_pick_up
-      = f.check_box :will_pick_up
-    %div.large-4.columns
-      = f.label :is_this_an_estimate?
-      = f.check_box :estimate
-    - if admin_user_signed_in?
+    %div.employer_section_form
+      Employer Info (Step 1/2)
+      %div.row
       %div.large-4.columns
-        = f.label :job_status
-        = f.text_field :job_status
+        = f.label :employer_first_name
+        = f.text_field :employer_first_name
       %div.large-4.columns
-        = f.label :dispatcher_id
-        = f.number_field :dispatcher_id
+        = f.label :employer_last_name
+        = f.text_field :employer_last_name
+      %div.row
       %div.large-4.columns
-        = f.label :receiver_id
-        = f.number_field :receiver_id
+        = f.label :estimated_duration
+        = f.text_field :duration
       %div.large-4.columns
-        = f.label :estimate_accepted
-        = f.check_box :estimate_accepted
+        = f.label :address
+        = f.text_field :address
       %div.large-4.columns
-        = f.label :estimate_amount
-        = f.text_field :estimate_amount
+        = f.label :phone_number
+        = f.telephone_field :phone_number, :class => "phone"
       %div.large-4.columns
-        = f.label :employer_profile_id
-        = f.number_field :employer_profile_id
-      .actions
-        = f.submit 'Save', :class => :button
-    - else
+        = f.label :how_did_you_hear_about_us?
+        = f.text_field :referred_by
+      %div.row
+      %a{:href=>"#", :id=>"next_link"}Next
+    %div.job_section_form
+      Job Info (Step 2/2)
+      %div.row
+      %div.large-2.columns
+        = f.label :number_of_workers
+        = f.number_field :num_of_workers
+        = f.hidden_field :kind, :value => "Gardening"
+      %div.large-4.columns
+        = f.label :date_of_job
+        = f.text_field :date_of_job, :id => "datetimepicker"
+      %div.row
+      %div.large-2.columns
+        = f.label :truck_needed
+        = check_box_tag :truck_needed
+      %div.large-2.columns
+        = f.label :dumpster_needed
+        = check_box_tag :dumpster_needed
+      %div.large-4.columns
+        = f.label :english_level_required
+        = f.select :english_level, options_for_select(["Some English","Fluent English","Not necessary"]), :prompt => "Select One"
+      %div.large-4.columns
+        = f.label :payment
+        = f.select :payment, options_for_select(["Cash", "Personal Check", "On the Books (w-4)", "On the Books (1099)", "Other"]), :prompt => "Select One"
+      %div.row
+      %div.large-6.columns
+        = f.label :description
+        = f.text_area :description
+      %div.large-6.columns
+        = f.label :tools_provided
+        = text_area_tag :tools_provided
+      %div.large-6.columns
+        = f.label :tools_needed
+        = text_area_tag :tools_needed
+      %div.row
+      %div.large-4.columns
+        = f.label :one_time
+        = f.check_box :one_time
+      %div.large-4.columns
+        = f.label :pruning?
+        = check_box_tag :pruning
+      %div.large-4.columns
+        = f.label :on_going
+        = f.check_box :on_going
+      %div.large-4.columns
+        = f.label :frequency
+        = f.text_field :frequency
+      %div.row
+      %div.large-4.columns
+        = f.label :will_pick_up
+        = f.check_box :will_pick_up
+      %div.large-4.columns
+        = f.label :is_this_an_estimate?
+        = f.check_box :estimate
+      %div.row
+      %a{:href=>"#", :id=>"back_link"}Back
       .actions
         = f.submit 'Save', :class => :button
