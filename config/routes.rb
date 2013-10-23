@@ -1,7 +1,7 @@
 Dlp::Application.routes.draw do
   resources :search_suggestions
 
-
+  devise_for :users, :controllers => {sessions: 'sessions'}
   root :to => 'welcome#index'
   resources :worker_profiles
 

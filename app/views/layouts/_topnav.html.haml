@@ -1,46 +1,30 @@
-%nav.top-bar
-  %ul.title-area
-    %li.name
-      %img#logo(src="https://s3-us-west-2.amazonaws.com/sfdlp/logonowords.gif" alt="logo")
-    %li.toggle-topbar.menu-icon
-      %a{:href => "#"}
-        %span Menu
-  %section.top-bar-section
-    / Left Nav Section
-    %ul.left
-      %li.divider
-      %li.name
-        %h1
-          =link_to("Home", root_path)
-      %li.divider
-      %li.name
-        =link_to("About Us", about_path)
-      %li.divider
-      %li.name
-        =link_to("FAQs", faq_path)
-      %li.divider
-      %li.name
-        =link_to("How to Hire", howtohire_path)
-      %li.divider
-    %ul.right
-      - if current_user
-        - if current_user.profile_type.nil?
-          %li.divider
-          %li.name
-            = link_to("New Worker Profile", new_worker_profile_path)
-          %li.divider
-          %li.name
-            = link_to("New Employer Profile", new_employer_profile_path)
+%div.header
+  / %img#logo(src="https://s3-us-west-2.amazonaws.com/sfdlp/logonowords.gif" alt="logo")
+  %ul.nav.nav-pills.pull-right
+    %li.active
+      =link_to("Home", root_path)
+    %li
+      %a{:href => "#how_to_hire"} How to hire
+    - if current_user
+      - if current_user.profile_type.nil?
         %li.divider
         %li.name
-          = link_to("#{current_user.email}", user_path(current_user.id))
+          = link_to("New Worker Profile", new_worker_profile_path)
         %li.divider
         %li.name
-          = link_to("Log out", destroy_user_session_path, :method => :delete)
-      - else
-        %li.divider
-        %li.name
-          = link_to("Sign up", new_user_registration_path)
-        %li.divider
-        %li.name
-          = link_to("Sign in", new_user_session_path)
+          = link_to("New Employer Profile", new_employer_profile_path)
+      %li.divider
+      %li.name
+        = link_to("#{current_user.email}", user_path(current_user.id))
+      %li.divider
+      %li.name
+        = link_to("Log out", destroy_user_session_path, :method => :delete)
+    - else
+      %li.divider
+      %li.name
+        = link_to("Sign up", new_user_registration_path, :remote => :true, "data-toggle" => "modal")
+      %li.divider
+      %li.name
+        = link_to("Sign in", new_user_session_path)
+  %h4.text-muted San Francisco
+  %h4.text-muted Day Labor Program

@@ -1,4 +1,4 @@
-%fieldset.large-4.columns
+%fieldset.col-lg-4
   %legend Assign Workers
   = form_for @job do |f|
     - if @job.errors.any?
@@ -8,10 +8,10 @@
           - @job.errors.full_messages.each do |msg|
             %li= msg
 
-    %div.large-6.columns
+    %div.col-lg-6
       = label_tag :enter_worker_first_name
       = text_field_tag "worker_profile[first_name]", params[:worker_profile]
-    %div.large-6.columns
+    %div.col-lg-6
       = label_tag :enter_worker_last_name
       = text_field_tag "worker_profile[last_name]", params[:worker_profile]
     %div.row

@@ -12,14 +12,12 @@
 
 </head>
   <body>
-    <%= render 'layouts/topnav' %>
-    <div class="contentwrapper row">
-      <p class="alert">
-        <%= alert %>
-      </p>
+    <div class="container">
+      <%= render 'layouts/topnav' %>
+      <%= alert %>
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
-    <%= render 'layouts/footer' %>
   </body>
 </html>
 

@@ -11,23 +11,23 @@
     %div.employer_section_form
       Employer Info (Step 1/2)
       %div.row
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :employer_first_name
         = f.text_field :employer_first_name
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :employer_last_name
         = f.text_field :employer_last_name
       %div.row
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :estimated_duration
         = f.text_field :duration
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :address
         = f.text_field :address
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :phone_number
         = f.telephone_field :phone_number, :class => "phone"
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :how_did_you_hear_about_us?
         = f.text_field :referred_by
       %div.row
@@ -35,54 +35,54 @@
     %div.job_section_form
       Job Info (Step 2/2)
       %div.row
-      %div.large-2.columns
+      %div.col-lg-2
         = f.label :number_of_workers
         = f.number_field :num_of_workers
         = f.hidden_field :kind, :value => "Gardening"
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :date_of_job
         = f.text_field :date_of_job, :id => "datetimepicker"
       %div.row
-      %div.large-2.columns
+      %div.col-lg-2
         = f.label :truck_needed
         = check_box_tag :truck_needed
-      %div.large-2.columns
+      %div.col-lg-2
         = f.label :dumpster_needed
         = check_box_tag :dumpster_needed
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :english_level_required
         = f.select :english_level, options_for_select(["Some English","Fluent English","Not necessary"]), :prompt => "Select One"
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :payment
         = f.select :payment, options_for_select(["Cash", "Personal Check", "On the Books (w-4)", "On the Books (1099)", "Other"]), :prompt => "Select One"
       %div.row
-      %div.large-6.columns
+      %div.col-lg-6
         = f.label :description
         = f.text_area :description
-      %div.large-6.columns
+      %div.col-lg-6
         = f.label :tools_provided
         = text_area_tag :tools_provided
-      %div.large-6.columns
+      %div.col-lg-6
         = f.label :tools_needed
         = text_area_tag :tools_needed
       %div.row
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :one_time
         = f.check_box :one_time
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :pruning?
         = check_box_tag :pruning
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :on_going
         = f.check_box :on_going
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :frequency
         = f.text_field :frequency
       %div.row
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :will_pick_up
         = f.check_box :will_pick_up
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :is_this_an_estimate?
         = f.check_box :estimate
       %div.row

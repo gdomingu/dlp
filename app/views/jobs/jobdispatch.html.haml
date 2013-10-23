@@ -7,7 +7,7 @@
 %p.large-7.columns
   %b Worker | Trabajador(a):
   - if @job.has_workers
-    %ul.large-6.columns
+    %ul.col-lg-6
       - @job.worker_profiles.each do |worker|
         %li
           = link_to worker.first_name + " " + worker.last_name, worker_profile_path(worker.id)
@@ -41,7 +41,7 @@
     = @job.phone_kind
 %div.row
 %div#map.large-8.columns
-%form#calculate-route.large-4.columns{:action => "#", :method => "get", :name => "calculate-route"}
+%form#calculate-route.col-lg-4{:action => "#", :method => "get", :name => "calculate-route"}
   %label{:for => "from"} From:
   %input#from{:name => "from", :value => "3358 Cesar Chavez Street, San Francisco CA", :required => "required", :size => "30", :type => "text"}/
   %a#from-link{:href => "#"} Get my position

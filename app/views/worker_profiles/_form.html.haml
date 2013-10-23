@@ -9,24 +9,24 @@
   %fieldset
     %legend New Member Form
     %div.row
-      %div.large-6.columns
+      %div.col-lg-6
         = f.label :first_name
         = f.text_field :first_name
-      %div.large-6.columns
+      %div.col-lg-6
         = f.label :last_name
         = f.text_field :last_name
     %div.row
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :home_phone
         = f.telephone_field :home_phone, :class => "phone"
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :cell_phone
         = f.telephone_field :cell_phone, :class => "phone"
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :work_phone
         = f.telephone_field :work_phone, :class => "phone"
     %div.row
-      %div.large-12.columns
+      %div.col-lg-12
         = f.label :address
         = f.text_field :address
     / .field
@@ -37,27 +37,27 @@
         = f.label :bio
         = f.text_area :bio
     %div.row
-      %div.large-6.columns
+      %div.col-lg-6
         = f.label :esl_level
         = f.text_field :esl_level
-      %div.large-6.columns
+      %div.col-lg-6
         = f.label :wait_list
         = f.number_field :wait_list
     %div.row
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :own_vehicle
         = f.check_box :own_vehicle
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :health_insurance
         = f.check_box :health_insurance
-      %div.large-4.columns
+      %div.col-lg-4
         = f.label :want_referral
         = f.check_box :want_referral
     / %div.row
-    /   %div.large-12.columns
+    /   %div.col-lg-12
     /     = f.label :flyered
     /     = f.datetime_select :flyered
     %div.row
-      %div.large-12.columns
+      %div.col-lg-12
         .actions
           = f.submit 'Save'
