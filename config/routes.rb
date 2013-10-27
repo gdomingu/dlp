@@ -9,6 +9,7 @@ Dlp::Application.routes.draw do
   get "/new_painting_job" => "jobs#new_painting_job", as: :new_painting_job
   get "/new_gardening_job" => "jobs#new_gardening_job", as: :new_gardening_job
   get "/new_other_job" => "jobs#new_other_job", as: :new_other_job
+  get "/user_sign_up" => "users#new", as: :user_sign_up
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
